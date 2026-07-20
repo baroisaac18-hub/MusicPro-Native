@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # ✅ تغيير: من ubuntu-latest إلى windows-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -19,10 +19,8 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v3
 
-      # ✅ تغيير: من assembleRelease إلى assembleDebug
       - run: ./gradlew assembleDebug --no-daemon
 
-      # ✅ تغيير: مسار الرفع أصبح لنسخة Debug
       - uses: actions/upload-artifact@v4
         with:
           name: MusicPro-APK
