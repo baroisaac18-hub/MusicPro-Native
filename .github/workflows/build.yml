@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # ✅ تغيير: من ubuntu-latest إلى windows-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -24,4 +24,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: MusicPro-APK
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: "**/*.apk"  # ✅ تعديل: هذا المسار يبحث عن ملف الـ APK في أي مكان بالمشروع
